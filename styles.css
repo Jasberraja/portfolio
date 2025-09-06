@@ -1,10 +1,9 @@
 /* Base Styles */
 :root {
-    --primary-color: #283a5c;
-    --secondary-color: #31d2cd;
+    --primary-color: #1e2227;
+    --secondary-color: #318aff;
     --text-color: #e0e0e0;
     --light-text: #ffffff;
-    --bg-color: #1e2227;
     --card-bg: #2a2e35;
 }
 
@@ -18,7 +17,7 @@ body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: var(--primary-color);
     overflow-x: hidden;
 }
 
@@ -50,14 +49,24 @@ p, li {
     overflow: hidden;
 }
 
+/* Hero Profile Image */
+.hero-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Content Layout */
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0 2rem;
-    position: relative;
+    text-align: center;
+    padding: 2rem;
 }
 
 .hero-content h1 {
@@ -160,14 +169,6 @@ section.animate {
     background-color: white;
 }
 
-#about .about-image {
-    width: 200px;
-    height: 200px;
-    border: 3px solid var(--secondary-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
 #about p {
     max-width: 800px;
     margin: 1rem auto;
@@ -188,7 +189,7 @@ section.animate {
 }
 
 #experience {
-    background-color: var(--bg-color);
+    background-color: var(--primary-color);
 }
 
 #skills {
@@ -196,7 +197,7 @@ section.animate {
 }
 
 #contact {
-    background-color: var(--bg-color);
+    background-color: var(--primary-color);
 }
 
 /* Content Section Styles */
@@ -293,9 +294,8 @@ section.animate p {
 }
 
 .other-skills h3 {
-    text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 /* Contact Section */
@@ -307,8 +307,8 @@ section.animate p {
 
 /* Placeholder Image Styles */
 .about-image {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin: 2rem auto;
@@ -319,12 +319,11 @@ section.animate p {
 
 .experience-image {
     width: 100%;
-    max-width: 600px;
-    height: auto;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 8px;
-    margin: 2rem auto;
-    display: block;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styles */
@@ -601,9 +600,6 @@ a:hover {
 /* Floating Technology Particles */
 .about-image-container {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 2rem auto;
 }
 
 .tech-particle {

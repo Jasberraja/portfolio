@@ -1,139 +1,569 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jasberraja P | Lead Application Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Jasber - Principal Architect | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#001f25",
+                        "surface-container": "#171f33",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#008ea1",
+                        "tertiary": "#2fd9f4",
+                        "on-tertiary": "#00363e",
+                        "on-primary": "#283044",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-container-lowest": "#060e20",
+                        "secondary-fixed": "#d3e4fe",
+                        "outline-variant": "#45464d",
+                        "surface-container-high": "#222a3d",
+                        "inverse-surface": "#dae2fd",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-primary": "#565e74",
+                        "surface": "#0b1326",
+                        "inverse-on-surface": "#283044",
+                        "primary-container": "#0f172a",
+                        "on-surface-variant": "#c6c6cd",
+                        "tertiary-container": "#001b20",
+                        "secondary-container": "#3a4a5f",
+                        "on-secondary-container": "#a9bad3",
+                        "tertiary-fixed": "#a2eeff",
+                        "surface-container-highest": "#2d3449",
+                        "on-error": "#690005",
+                        "primary": "#bec6e0",
+                        "surface-bright": "#31394d",
+                        "background": "#0b1326",
+                        "on-secondary": "#213145",
+                        "surface-dim": "#0b1326",
+                        "tertiary-fixed-dim": "#2fd9f4",
+                        "on-surface": "#dae2fd",
+                        "surface-variant": "#2d3449",
+                        "error-container": "#93000a",
+                        "outline": "#909097",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-tint": "#bec6e0",
+                        "on-primary-container": "#798098",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-background": "#dae2fd",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#131b2e",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#004e5a",
+                        "primary-fixed-dim": "#bec6e0",
+                        "secondary": "#b7c8e1",
+                        "on-secondary-fixed": "#0b1c30"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .blueprint-grid {
+            background-image: radial-gradient(circle, #2fd9f4 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        .expertise-bg {
+            background-image: 
+                linear-gradient(rgba(47, 217, 244, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(47, 217, 244, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
 </head>
-<body>
-    <!-- Parallax hero section -->
-    <div class="parallax-hero">
-        <div class="hero-content">
-            <div class="about-image-container">
-                <img src="./logo_jas.png" alt="Profile" class="about-image">
-                <div class="tech-particle" style="top:10%; left:10%; animation-delay:0s"><i class="fab fa-angular"></i></div>
-                <div class="tech-particle" style="top:90%; left:20%; animation-delay:2s"><i class="fab fa-react"></i></div>
-                <div class="tech-particle" style="top:80%; left:80%; animation-delay:4s"><i class="fab fa-vuejs"></i></div>
-                <div class="tech-particle" style="top:20%; left:70%; animation-delay:6s"><i class="fab fa-node-js"></i></div>
-                <div class="tech-particle" style="top:40%; left:90%; animation-delay:8s"><i class="fas fa-database"></i></div>
-                <div class="tech-particle" style="top:90%; left:60%; animation-delay:10s"><i class="fas fa-mobile-alt"></i></div>
+<body class="selection:bg-tertiary selection:text-on-tertiary">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-xl shadow-2xl shadow-navy-950/50">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto">
+            <div class="text-xl font-bold tracking-tighter text-slate-100 uppercase font-headline">
+                Jasber | Principal Architect
             </div>
-            <div class="name-particle" style="top:10%; left:10%; animation-delay:0s"><i class="fab fa-angular"></i></div>
-            <div class="name-particle" style="top:90%; left:20%; animation-delay:2s"><i class="fab fa-react"></i></div>
-            <div class="name-particle" style="top:80%; left:80%; animation-delay:4s"><i class="fab fa-vuejs"></i></div>
-            <div class="name-particle" style="top:20%; left:70%; animation-delay:6s"><i class="fab fa-node-js"></i></div>
-            <div class="name-particle" style="top:40%; left:90%; animation-delay:8s"><i class="fas fa-database"></i></div>
-            <div class="name-particle" style="top:90%; left:60%; animation-delay:10s"><i class="fas fa-mobile-alt"></i></div>
-            <div class="name-particle" style="top:10%; left:50%; animation-delay:12s"><i class="fab fa-js"></i></div>
-            <div class="name-particle" style="top:60%; left:10%; animation-delay:14s"><i class="fab fa-html5"></i></div>
-            <div class="name-particle" style="top:30%; left:30%; animation-delay:16s"><i class="fab fa-css3-alt"></i></div>
-            <div class="name-particle" style="top:70%; left:40%; animation-delay:18s"><i class="fab fa-git-alt"></i></div>
-            <h1>Jasberraja P</h1>
-            <h2>Lead Application Engineer</h2>
-            <p><span>ME(A/R)N Stack</span> <span>Web & Mobile Applications</span> <span>AI Enthusiast</span></p>
-            <a href="#about" class="cta-button">Explore My Work</a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8 font-headline tracking-tight">
+                <a class="nav-link text-cyan-400 border-b-2 border-cyan-400 pb-1 transition-all duration-300 ease-in-out" href="#home" data-section="home">Home</a>
+                <a class="nav-link text-slate-400 hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out" href="#expertise" data-section="expertise">Expertise</a>
+                <a class="nav-link text-slate-400 hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out" href="#contact" data-section="contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-cyan-400 hover:bg-white/5 rounded-full transition-all duration-300 ease-in-out">
+                    <span class="material-symbols-outlined">terminal</span>
+                </button>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Main content sections -->
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Experienced Lead Application Engineer with <strong id="experience-years"></strong> in full-stack web and mobile development. I specialize in creating efficient, scalable applications using modern technologies across the ME(A/R)N stack.</p>
-            <p>My expertise spans from architecting complex systems to mentoring junior developers, always with a focus on clean code and best practices.</p>
-        </section>
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <main class="pt-24 min-h-screen">
+            <!-- Hero Section: The Precision Blueprint -->
+            <section class="relative px-8 lg:px-24 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Technical Backdrop Decoration -->
+                <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+                    <div class="absolute top-0 right-0 w-full h-full border-r border-b border-tertiary/20 grid grid-cols-6 grid-rows-6">
+                        <div class="border-r border-b border-tertiary/10"></div>
+                        <div class="border-r border-b border-tertiary/10"></div>
+                        <div class="border-r border-b border-tertiary/10"></div>
+                        <div class="border-r border-b border-tertiary/10"></div>
+                        <div class="border-r border-b border-tertiary/10"></div>
+                        <div class="border-r border-b border-tertiary/10"></div>
+                    </div>
+                </div>
+                <!-- Content Column -->
+                <div class="lg:col-span-7 relative z-10">
+                    <div class="inline-flex items-center gap-2 mb-6 py-1 px-3 bg-surface-container-high rounded-full border border-outline-variant/15">
+                        <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] font-headline font-bold text-on-surface-variant">System Active // Principal Level</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-none">
+                        Jasber<br/>
+                        <span class="text-tertiary">Principal Engineer</span>
+                    </h1>
+                    <div class="max-w-xl">
+                        <p class="text-xl lg:text-2xl font-body text-on-primary-container leading-relaxed mb-8 border-l-2 border-tertiary/30 pl-6 italic">
+                            Experienced Application Engineer with expertise in architecting and delivering scalable, enterprise-grade applications across fintech, security, and SaaS domains.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mt-10">
+                        <button class="bg-tertiary text-on-tertiary px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:brightness-110 transition-all flex items-center gap-3 group" onclick="navigateToSection('expertise')">
+                            Explore Expertise
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                        <button class="bg-surface-container-high text-on-surface px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-all flex items-center gap-3">
+                            Download CV
+                            <span class="material-symbols-outlined">download</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Image Column: Asymmetric Architectural Frame -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-4 bg-tertiary/5 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container shadow-2xl rounded-lg">
+                        <img alt="Jasber Professional Avatar" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-100" data-alt="Modern professional portrait of a senior engineer with clean architectural lighting, deep blue studio background, high-contrast and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCDuI33yoeqo1pTPzG0atwfBAeCA4YUOefySiCpiz5c39h6qwcqEwM_QJorTEVTnIM2lZaN1mSLP9uCPpCouo5rZRq_V3enHAy2u_gwxotmE0H--VjiShoBtQ7zHRNSOPXkFC0Y7-WetKtDZroB4S8Ek3Z3SZJAGiI2dMStwDCsvQHM1CljCLfevtpvQ59ni9F2XRn7WK0-YF_wEL90oLbAZzkf_0YE1GJL4k2W4a_1VqfO-xejo3kJvpzuxx3OxNriXokS-glB6P6"/>
+                        <!-- Architectural Overlay Meta-Data -->
+                        <div class="absolute top-4 right-4 bg-surface-container-high/80 backdrop-blur-md px-3 py-1 border border-outline-variant/15 rounded-sm">
+                            <span class="text-[9px] font-mono uppercase tracking-tighter text-tertiary">REF: ARCH_001_IMG_3</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="p-4 bg-surface-container-lowest/90 backdrop-blur-lg border-l-4 border-tertiary">
+                                <p class="text-[10px] font-headline font-bold text-on-surface-variant uppercase tracking-widest mb-1">Current Stack</p>
+                                <p class="text-xs text-on-surface font-mono">NODE.JS // REACT // K8S // AWS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Core Strengths Section: Bento Grid Layout -->
+            <section class="px-8 lg:px-24 py-24 bg-surface-container-low/30">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <h2 class="text-[10px] uppercase tracking-[0.5em] text-tertiary font-headline font-bold mb-4">Core Competencies</h2>
+                        <h3 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Architectural Integrity meets Functional Precision.</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] font-mono text-on-primary-container uppercase">Execution Hash: 0x2FD9F4A1</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                    <!-- Strength 1 -->
+                    <div class="bg-surface-container p-10 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+                        </div>
+                        <span class="text-tertiary text-sm font-mono mb-8 block">01 // STRUCTURE</span>
+                        <h4 class="text-xl font-headline font-bold text-on-surface mb-4">Microservices & Multi-Tenant Architecture</h4>
+                        <p class="text-on-primary-container text-sm leading-relaxed mb-6">Designing modular systems that scale infinitely while maintaining strict isolation and performance benchmarks.</p>
+                        <div class="h-1 w-12 bg-tertiary/20 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                    <!-- Strength 2 -->
+                    <div class="bg-surface-container-high p-10 hover:bg-surface-container-highest transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">security</span>
+                        </div>
+                        <span class="text-tertiary text-sm font-mono mb-8 block">02 // DEFENSE</span>
+                        <h4 class="text-xl font-headline font-bold text-on-surface mb-4">Secure Application Development</h4>
+                        <p class="text-on-primary-container text-sm leading-relaxed mb-6">Implementing zero-trust principles and robust security layers for fintech and security-first enterprise SaaS.</p>
+                        <div class="h-1 w-12 bg-tertiary/20 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                    <!-- Strength 3 -->
+                    <div class="bg-surface-container p-10 hover:bg-surface-container-high transition-colors group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                        </div>
+                        <span class="text-tertiary text-sm font-mono mb-8 block">03 // DELIVERY</span>
+                        <h4 class="text-xl font-headline font-bold text-on-surface mb-4">Full Stack Engineering</h4>
+                        <p class="text-on-primary-container text-sm leading-relaxed mb-6">Bridging the gap between complex backend logic and high-performance, pixel-perfect frontend experiences.</p>
+                        <div class="h-1 w-12 bg-tertiary/20 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
 
-        <section id="experience">
-            <h2>Professional Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Lead Application Engineer</h3>
-                    <p class="timeline-date">May 2025 - Present <i class="fas fa-circle live-icon"></i></p>
-                    <p>Leading full-stack application development and architecture design.</p>
+    <!-- Expertise Section -->
+    <section id="expertise" class="section expertise-bg">
+        <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <header class="mb-20">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="h-[1px] w-12 bg-tertiary"></span>
+                    <span class="font-label text-xs uppercase tracking-[0.2em] text-tertiary">Technical Stack & Systems</span>
                 </div>
-                <div class="timeline-item">
-                    <h3>Senior Software Engineer</h3>
-                    <p class="timeline-date">Feb 2023 - May 2025 · 2 yrs 4 mos</p>
-                    <p>Frontend (Angular and VueJs), Backend (Java and Express Node)</p>
+                <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface max-w-4xl leading-tight">
+                    Technical Expertise & <br/><span class="text-tertiary">Architecture</span>
+                </h1>
+                <p class="mt-8 text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                    Building resilient digital foundations through structural precision and high-performance engineering. Specialized in distributed systems and secure enterprise frontends.
+                </p>
+            </header>
+            <!-- Expertise Grid (Bento Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Frontend Architecture -->
+                <div class="md:col-span-7 group bg-surface-container-low p-8 relative overflow-hidden transition-all duration-300 hover:bg-surface-container-high border-l-2 border-transparent hover:border-tertiary">
+                    <div class="flex justify-between items-start mb-12">
+                        <div>
+                            <span class="font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-2 block">System Layer: 01</span>
+                            <h3 class="font-headline text-2xl font-bold">Frontend Engineering</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-tertiary text-4xl" data-icon="web">web</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-label text-xs font-bold uppercase text-slate-500 mb-4 tracking-tighter">Core Technologies</h4>
+                            <ul class="space-y-3 font-headline font-medium">
+                                <li class="flex items-center gap-2">Angular <span class="text-[10px] text-tertiary/40 font-label">RXJS/NGRX</span></li>
+                                <li class="flex items-center gap-2">React.js <span class="text-[10px] text-tertiary/40 font-label">VITE/REDUX</span></li>
+                                <li class="flex items-center gap-2">Vue.js <span class="text-[10px] text-tertiary/40 font-label">COMPOSITION</span></li>
+                                <li class="flex items-center gap-2">Next.js <span class="text-[10px] text-tertiary/40 font-label">SSR/ISR</span></li>
+                            </ul>
+                        </div>
+                        <div class="border-l border-outline-variant/20 pl-8">
+                            <h4 class="font-label text-xs font-bold uppercase text-slate-500 mb-4 tracking-tighter">Specializations</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">
+                                Focus on micro-frontends, atomic design systems, and WebAssembly integration for high-compute visual tools.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <h3>Junior Software Engineer</h3>
-                    <p class="timeline-date">Nov 2020 - Feb 2023 · 2 yrs 4 mos</p>
-                    <p>MEAN Stack and Vue.js</p>
+                <!-- Architecture Card -->
+                <div class="md:col-span-5 group bg-surface-container-low p-8 relative transition-all duration-300 hover:bg-surface-container-high border-l-2 border-transparent hover:border-tertiary">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <span class="font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-2 block">Foundational Logic</span>
+                            <h3 class="font-headline text-2xl font-bold">Architecture</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-tertiary text-4xl" data-icon="account_tree">account_tree</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider">DDD</span>
+                            <span class="px-3 py-1 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider">Clean Arch</span>
+                            <span class="px-3 py-1 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider">CQRS</span>
+                            <span class="px-3 py-1 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider">Event-Driven</span>
+                            <span class="px-3 py-1 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider">Multi-Tenant</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant leading-relaxed pt-4">
+                            Designing scalable blueprints that prioritize domain integrity and maintainable boundaries across distributed environments.
+                        </p>
+                    </div>
+                </div>
+                <!-- Backend & Cloud -->
+                <div class="md:col-span-5 group bg-surface-container-low p-8 relative transition-all duration-300 hover:bg-surface-container-high border-l-2 border-transparent hover:border-tertiary">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <span class="font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-2 block">Service Infrastructure</span>
+                            <h3 class="font-headline text-2xl font-bold">Backend Systems</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-tertiary text-4xl" data-icon="storage">storage</span>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between group/item">
+                            <span class="font-headline text-lg">Java Spring Ecosystem</span>
+                            <span class="text-[10px] font-label text-slate-500">BOOT / SECURITY</span>
+                        </div>
+                        <div class="h-px bg-outline-variant/10"></div>
+                        <div class="flex items-center justify-between group/item">
+                            <span class="font-headline text-lg">Node.js Runtimes</span>
+                            <span class="text-[10px] font-label text-slate-500">TS / EXPRESS / NEST</span>
+                        </div>
+                        <div class="h-px bg-outline-variant/10"></div>
+                        <div class="flex items-center justify-between group/item">
+                            <span class="font-headline text-lg">Microservices</span>
+                            <span class="text-[10px] font-label text-slate-500">K8S / DOCKER</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Security & Governance -->
+                <div class="md:col-span-7 group bg-surface-container-low p-8 relative overflow-hidden transition-all duration-300 hover:bg-surface-container-high border-l-2 border-transparent hover:border-tertiary">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <span class="material-symbols-outlined text-9xl" data-icon="security" data-weight="fill">security</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-12 relative z-10">
+                        <div>
+                            <span class="font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-2 block">Access Governance</span>
+                            <h3 class="font-headline text-2xl font-bold">Enterprise Security</h3>
+                        </div>
+                        <span class="material-symbols-outlined text-tertiary text-4xl" data-icon="shield_lock">shield_lock</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
+                        <div class="space-y-2">
+                            <h5 class="text-tertiary font-label text-[10px] font-bold uppercase tracking-tighter">Identity</h5>
+                            <p class="text-sm font-headline">OAuth2, JWT, OIDC</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="text-tertiary font-label text-[10px] font-bold uppercase tracking-tighter">Principles</h5>
+                            <p class="text-sm font-headline">Zero Trust Access, PAM</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="text-tertiary font-label text-[10px] font-bold uppercase tracking-tighter">Mobile/Edge</h5>
+                            <p class="text-sm font-headline">UEM, Bio-Auth</p>
+                        </div>
+                    </div>
+                    <div class="mt-12 bg-surface-container-lowest p-4 border border-outline-variant/10">
+                        <p class="text-xs font-label text-slate-500 uppercase tracking-widest leading-relaxed">
+                            Implementing robust security protocols for high-compliance environments, ensuring data integrity at every architectural node.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="E-commerce Platform">
-                    <h3>E-commerce Platform</h3>
-                    <p>Full-stack solution with MERN stack and Vue.js</p>
+            <!-- Technical Metadata Overlay Aesthetic -->
+            <div class="mt-24 flex flex-col md:flex-row items-center justify-between gap-8 border-y border-outline-variant/10 py-12">
+                <div class="flex items-center gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-headline font-bold text-on-surface">12+</div>
+                        <div class="text-[10px] font-label uppercase tracking-widest text-slate-500">Years Experience</div>
+                    </div>
+                    <div class="w-px h-8 bg-outline-variant/20"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-headline font-bold text-on-surface">40+</div>
+                        <div class="text-[10px] font-label uppercase tracking-widest text-slate-500">Core Projects</div>
+                    </div>
+                    <div class="w-px h-8 bg-outline-variant/20"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-headline font-bold text-on-surface">5</div>
+                        <div class="text-[10px] font-label uppercase tracking-widest text-slate-500">Patent Designs</div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Meals Plan App">
-                    <h3>Meals Plan App</h3>
-                    <p>Mobile nutrition planning application built with Flutter</p>
-                </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="PDF Editor">
-                    <h3>PDF Editor</h3>
-                    <p>Document processing application using MEAN stack</p>
-                </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Admin Application">
-                    <h3>Admin Dashboard</h3>
-                    <p>Enterprise admin panel with Nest.js, Next.js and MongoDB</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Expertise</h2>
-            <div class="skills-container">
-                <div class="skill"><i class="fab fa-angular"></i> Angular</div>
-                <div class="skill"><i class="fab fa-react"></i> React</div>
-                <div class="skill"><i class="fab fa-vuejs"></i> Vue</div>
-                <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
-                <div class="skill"><i class="fas fa-database"></i> MongoDB</div>
-                <div class="skill"><i class="fas fa-mobile-alt"></i> Flutter</div>
-                <div class="skill"><i class="fab fa-sass"></i> SCSS</div>
-                <div class="skill"><i class="fas fa-code"></i> TypeScript</div>
-                <div class="skill"><i class="fab fa-js-square"></i> Next.js</div>
-                <div class="skill"><i class="fas fa-server"></i> Nest.js</div>
-            </div>
-            
-            <div class="other-skills">
-                <h3>Other Skills</h3>
-                <div class="skills-container">
-                    <div class="skill"><i class="fab fa-git-alt"></i> Git</div>
-                    <div class="skill"><i class="fab fa-jira"></i> Jira</div>
+                <div class="text-right">
+                    <button class="bg-tertiary text-on-tertiary-fixed font-headline font-bold px-8 py-4 flex items-center gap-3 hover:bg-tertiary/90 transition-all rounded-lg">
+                        <span>DOWNLOAD TECH SPECS</span>
+                        <span class="material-symbols-outlined text-sm">terminal</span>
+                    </button>
                 </div>
             </div>
-        </section>
+        </main>
+    </section>
 
-        <section id="contact">
-            <h2>Let's Connect</h2>
-            <p>I'm always interested in hearing about new projects and opportunities.</p>
-            <div class="contact-methods">
-                <a href="mailto:jasberraja@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> Email Me</a>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <main class="relative pt-32 pb-24 min-h-screen overflow-hidden">
+            <!-- Technical Aesthetic Background -->
+            <div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-tertiary/5 to-transparent pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-8 relative z-10">
+                <!-- Asymmetrical Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                    <!-- Left Column: Editorial Content -->
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 mb-6">
+                            <span class="w-12 h-[2px] bg-tertiary"></span>
+                            <span class="font-label text-xs uppercase tracking-[0.2em] text-tertiary">System Status: Available</span>
+                        </div>
+                        <h1 class="font-headline text-5xl lg:text-7xl font-bold tracking-tighter text-on-surface mb-8 leading-[0.9]">
+                            Let's Architect <br/>Something Great
+                        </h1>
+                        <p class="text-on-surface-variant text-lg leading-relaxed max-w-md mb-12">
+                            Available for consultations on enterprise security, microservices architecture, and frontend excellence. Turning complex requirements into elegant, high-performance systems.
+                        </p>
+                        <!-- Contact Metadata Block -->
+                        <div class="space-y-6">
+                            <div class="group cursor-default">
+                                <span class="block font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-1">Direct Communication</span>
+                                <a class="text-xl font-headline text-on-surface hover:text-tertiary transition-colors" href="mailto:hello@jasber.dev">hello@jasber.dev</a>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <span class="block font-label text-[10px] uppercase tracking-widest text-on-primary-container mb-1">Social Architecture</span>
+                                    <div class="flex gap-4">
+                                        <a class="text-on-surface-variant hover:text-tertiary transition-colors flex items-center gap-2" href="#">
+                                            <span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+                                            <span class="text-sm font-label uppercase">LinkedIn</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex items-end">
+                                    <a class="text-on-surface-variant hover:text-tertiary transition-colors flex items-center gap-2" href="#">
+                                        <span class="material-symbols-outlined text-sm" data-icon="code">code</span>
+                                        <span class="text-sm font-label uppercase">GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: The "Blueprint" Contact Form -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-surface-container-low p-8 lg:p-12 relative overflow-hidden group">
+                            <!-- Decorative Architectural Specs -->
+                            <div class="absolute top-0 right-0 p-4 opacity-20 pointer-events-none select-none">
+                                <pre class="text-[10px] font-mono leading-tight text-tertiary">                                SPEC_ID: 0x442A
+                                VERSION: 1.0.4
+                                REQ_TYPE: INBOUND
+                            </pre>
+                            </div>
+                            <div class="relative z-10">
+                                <form action="#" class="space-y-8">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <!-- Name Input -->
+                                        <div class="space-y-2">
+                                            <label class="block font-label text-[10px] uppercase tracking-widest text-on-primary-container" for="name">Architect Name / Entity</label>
+                                            <div class="relative">
+                                                <input class="w-full bg-surface-container-lowest border-none outline-none focus:ring-0 text-on-surface placeholder:text-surface-container-highest px-4 py-4 transition-all duration-300 border-l-2 border-transparent focus:border-tertiary" id="name" name="name" placeholder="E.G. SATOSHI NAKAMOTO" type="text"/>
+                                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-outline-variant/30"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Email Input -->
+                                        <div class="space-y-2">
+                                            <label class="block font-label text-[10px] uppercase tracking-widest text-on-primary-container" for="email">Encrypted Return Path</label>
+                                            <div class="relative">
+                                                <input class="w-full bg-surface-container-lowest border-none outline-none focus:ring-0 text-on-surface placeholder:text-surface-container-highest px-4 py-4 transition-all duration-300 border-l-2 border-transparent focus:border-tertiary" id="email" name="email" placeholder="YOUR@DOMAIN.COM" type="email"/>
+                                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-outline-variant/30"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Message Input -->
+                                    <div class="space-y-2">
+                                        <label class="block font-label text-[10px] uppercase tracking-widest text-on-primary-container" for="message">Architectural Requirements</label>
+                                        <div class="relative">
+                                            <textarea class="w-full bg-surface-container-lowest border-none outline-none focus:ring-0 text-on-surface placeholder:text-surface-container-highest px-4 py-4 transition-all duration-300 border-l-2 border-transparent focus:border-tertiary resize-none" id="message" name="message" placeholder="DESCRIBE THE SCOPE OF THE SYSTEM..." rows="6"></textarea>
+                                            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-outline-variant/30"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Submit CTA -->
+                                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                            <span class="text-[10px] font-label uppercase tracking-widest text-on-primary-container">Ready for initial deployment</span>
+                                        </div>
+                                        <button class="group relative px-10 py-4 bg-tertiary text-on-tertiary font-headline font-bold uppercase tracking-tighter text-sm hover:bg-tertiary/90 transition-all active:scale-95 flex items-center gap-3 overflow-hidden" type="submit">
+                                            <span>Initialize Proposal</span>
+                                            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+                                            <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Supplemental Technical Data -->
+                        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-surface-container p-6 border-l-2 border-tertiary/20">
+                                <span class="material-symbols-outlined text-tertiary mb-3" data-icon="security">security</span>
+                                <h4 class="font-headline text-sm font-bold text-on-surface uppercase mb-2">Audit-Ready</h4>
+                                <p class="text-[10px] font-label text-on-surface-variant leading-relaxed">Security-first protocols integrated into every architectural layer.</p>
+                            </div>
+                            <div class="bg-surface-container p-6 border-l-2 border-tertiary/20">
+                                <span class="material-symbols-outlined text-tertiary mb-3" data-icon="hub">hub</span>
+                                <h4 class="font-headline text-sm font-bold text-on-surface uppercase mb-2">Scale-Oriented</h4>
+                                <p class="text-[10px] font-label text-on-surface-variant leading-relaxed">Designed for 10^x growth cycles and microservice resilience.</p>
+                            </div>
+                            <div class="bg-surface-container p-6 border-l-2 border-tertiary/20">
+                                <span class="material-symbols-outlined text-tertiary mb-3" data-icon="speed">speed</span>
+                                <h4 class="font-headline text-sm font-bold text-on-surface uppercase mb-2">High Perf</h4>
+                                <p class="text-[10px] font-label text-on-surface-variant leading-relaxed">Optimization at the compiler level for frontend excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+            <!-- Decorative Blueprint Element -->
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 border border-tertiary/10 rounded-full pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-[32rem] h-[32rem] border border-tertiary/5 rounded-full pointer-events-none"></div>
+        </main>
+    </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://x.com/jasberraja" target="_blank"><i class="fab fa-x"></i></a>
-            <a href="https://www.linkedin.com/in/jasberraja-p-26458317b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Jasberraja" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Footer -->
+    <footer class="w-full py-12 px-8 border-t border-slate-800/30 bg-[#0b1326]">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-full mx-auto">
+            <div class="flex flex-col gap-2">
+                <div class="text-slate-200 font-bold font-headline uppercase tracking-widest text-sm">Jasber</div>
+                <p class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500">© 2024 Jasber. Built with Architectural Precision.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100" href="mailto:hello@jasber.dev">Email</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100" href="#">Source</a>
+            </div>
         </div>
-        <p>&copy; 2025 Jasberraja P. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Navigation functionality
+        function navigateToSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-cyan-400', 'border-b-2', 'border-cyan-400', 'pb-1');
+                link.classList.add('text-slate-400');
+            });
+            
+            const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.remove('text-slate-400');
+                activeLink.classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400', 'pb-1');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Handle navigation clicks
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                navigateToSection(sectionId);
+            });
+        });
+        
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form - in production, this would send your message.');
+        });
+    </script>
 </body>
 </html>

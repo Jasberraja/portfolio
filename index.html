@@ -5,8 +5,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Jasberraja - Principal Frontend Architect | Portfolio</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -62,9 +63,11 @@
                         "on-secondary-fixed": "#0b1c30"
                     },
                     fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
+                        "headline": ["JetBrains Mono", "Fira Code", "Share Tech Mono", "monospace"],
+                        "body": ["JetBrains Mono", "Fira Code", "Share Tech Mono", "monospace"],
+                        "label": ["JetBrains Mono", "Fira Code", "Share Tech Mono", "monospace"],
+                        "terminal": ["Fira Code", "Share Tech Mono", "JetBrains Mono", "monospace"],
+                        "digital": ["Share Tech Mono", "JetBrains Mono", "Fira Code", "monospace"]
                     },
                     borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
                 },
@@ -78,11 +81,129 @@
         body {
             background-color: #0b1326;
             color: #dae2fd;
-            font-family: 'Inter', sans-serif;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Share Tech Mono', monospace;
+            letter-spacing: 0.02em;
+            overflow-x: hidden;
+            overflow-y: auto !important;
         }
-        .font-headline { font-family: 'Space Grotesk', sans-serif; }
-        .section { display: none; }
-        .section.active { display: block; }
+        
+        .main-container {
+            position: relative;
+            width: 100%;
+        }
+        .font-headline { font-family: 'Fira Code', 'Share Tech Mono', 'JetBrains Mono', monospace; }
+        .font-terminal { font-family: 'Fira Code', 'Share Tech Mono', 'JetBrains Mono', monospace; }
+        .font-digital { font-family: 'Share Tech Mono', 'JetBrains Mono', 'Fira Code', monospace; }
+        
+        /* Digital/Terminal Effects */
+        .terminal-text {
+            font-family: 'Fira Code', 'Share Tech Mono', 'JetBrains Mono', monospace;
+            text-shadow: 0 0 5px rgba(47, 217, 244, 0.5);
+            letter-spacing: 0.05em;
+        }
+        
+        .digital-text {
+            font-family: 'Share Tech Mono', 'JetBrains Mono', 'Fira Code', monospace;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .glitch {
+            position: relative;
+            color: #2fd9f4;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #ff5f56;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #00ff88;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); }
+            40% { clip-path: inset(50% 0 20% 0); transform: translate(2px, -2px); }
+            60% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 1px); }
+            80% { clip-path: inset(80% 0 5% 0); transform: translate(1px, -1px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+            40% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(30% 0 40% 0); transform: translate(1px, -2px); }
+            80% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, 1px); }
+        }
+        
+        .scanlines {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scanlines::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(47, 217, 244, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(47, 217, 244, 0.1) 2px,
+                    rgba(47, 217, 244, 0.1) 4px
+                );
+            animation: matrix-scroll 20s linear infinite;
+        }
+        
+        @keyframes matrix-scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100px); }
+        }
+        .section { 
+            min-height: 100vh; 
+            display: none;
+        }
+        .section.active { 
+            display: block; 
+        }
         .blueprint-grid {
             background-image: radial-gradient(circle, #2fd9f4 1px, transparent 1px);
             background-size: 40px 40px;
@@ -110,11 +231,260 @@
             backdrop-filter: blur(5px);
             transform: translate(-50%, -150%);
             white-space: nowrap;
+            transition: all 0.1s ease-out;
         }
         
         /* Custom cursor for interactive elements */
         a, button, input, textarea, .cursor-pointer {
             cursor: pointer;
+        }
+        
+        /* Global Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(47, 217, 244, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(47, 217, 244, 0.6);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Animation Classes */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-slideInScale {
+            animation: slideInScale 0.6s ease-out forwards;
+        }
+        
+        .animate-glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-rotate {
+            animation: rotate 20s linear infinite;
+        }
+        
+        .animate-typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typewriter 3s steps(40, end) forwards;
+        }
+        
+        /* Staggered animations */
+        .animate-stagger-1 { animation-delay: 0.1s; }
+        .animate-stagger-2 { animation-delay: 0.2s; }
+        .animate-stagger-3 { animation-delay: 0.3s; }
+        .animate-stagger-4 { animation-delay: 0.4s; }
+        .animate-stagger-5 { animation-delay: 0.5s; }
+        
+        /* Navigation animations */
+        nav {
+            animation: slideInScale 0.6s ease-out;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2fd9f4;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero section animations */
+        .hero-title {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero-content {
+            animation: fadeInLeft 1s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .hero-image {
+            animation: fadeInRight 1s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+        
+        .hero-button {
+            animation: slideInScale 0.8s ease-out 0.8s forwards;
+            opacity: 0;
+        }
+        
+        /* Core strengths animations */
+        .strength-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .strength-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(47, 217, 244, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        /* Expertise section animations */
+        .expertise-card {
+            opacity: 0;
+            animation: slideInScale 0.6s ease-out forwards;
+            transition: all 0.3s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(47, 217, 244, 0.3);
+        }
+        
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: rgba(47, 217, 244, 0.1);
+            border-color: #2fd9f4;
+        }
+        
+        /* Contact form animations */
+        .contact-form {
+            animation: slideInScale 0.8s ease-out;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(47, 217, 244, 0.2);
+        }
+        
+        .submit-button {
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(47, 217, 244, 0.4);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Modal animations */
+        .modal-enter {
+            animation: slideInScale 0.3s ease-out;
+        }
+        
+        .modal-exit {
+            animation: slideInScale 0.3s ease-out reverse;
         }
         
         /* Terminal modal styles */
@@ -133,6 +503,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: fadeInUp 0.3s ease-out;
         }
         .terminal-window {
             background: #0b1326;
@@ -143,6 +514,7 @@
             max-height: 80vh;
             overflow: hidden;
             box-shadow: 0 0 40px rgba(47, 217, 244, 0.3);
+            animation: slideInScale 0.3s ease-out;
         }
         .terminal-header {
             background: #171f33;
@@ -182,6 +554,8 @@
         .terminal-line {
             margin-bottom: 8px;
             line-height: 1.4;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out forwards;
         }
         .terminal-prompt {
             color: #2fd9f4;
@@ -206,10 +580,6 @@
         .terminal-blink {
             animation: blink 1s infinite;
         }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
         
         /* CV/Tech Specs Modal Styles */
         .cv-modal {
@@ -227,6 +597,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: fadeInUp 0.3s ease-out;
         }
         .cv-content {
             background: #0b1326;
@@ -237,6 +608,7 @@
             max-height: 90vh;
             overflow: hidden;
             box-shadow: 0 0 50px rgba(47, 217, 244, 0.4);
+            animation: slideInScale 0.3s ease-out;
         }
         .cv-header {
             background: #171f33;
@@ -297,6 +669,8 @@
         }
         .cv-section {
             margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
         .cv-section-title {
             color: #2fd9f4;
@@ -384,22 +758,31 @@
         }
         
         @media print {
-            .cv-modal {
+            body * {
+                visibility: hidden;
+            }
+            .cv-modal.active .cv-content, .cv-modal.active .cv-content * {
+                visibility: visible;
+            }
+            .cv-modal.active {
                 position: static;
                 background: white;
                 backdrop-filter: none;
+                display: block !important;
             }
             .cv-content {
                 box-shadow: none;
                 border: none;
                 max-width: 100%;
                 max-height: 100%;
+                margin: 0;
+                padding: 0;
             }
             .cv-header, .cv-actions {
                 display: none;
             }
             .cv-body {
-                padding: 0;
+                padding: 20px;
                 max-height: none;
                 overflow: visible;
             }
@@ -416,6 +799,7 @@
             .cv-skill-category, .cv-experience-item, .cv-contact-info {
                 background: #f5f5f5;
                 border-left-color: #001f25;
+                page-break-inside: avoid;
             }
             .cv-skill-title, .cv-experience-company {
                 color: #001f25;
@@ -423,12 +807,22 @@
             .cv-skill-list, .cv-experience-description, .cv-contact-item {
                 color: #333;
             }
+            .cv-section {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
-<body class="selection:bg-tertiary selection:text-on-tertiary">
+<body class="selection:bg-tertiary selection:text-on-tertiary scanlines">
+    <!-- Matrix Rain Background -->
+    <div class="matrix-rain"></div>
+    
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
     <!-- Coordinate Display -->
-    <div id="cursor-display" class="cursor-display">X: 0, Y: 0</div>
+    <div id="cursor-display" class="cursor-display terminal-text">X: 0, Y: 0</div>
     
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-xl shadow-2xl shadow-navy-950/50">
@@ -450,6 +844,8 @@
         </div>
     </nav>
 
+    <!-- Main Content Container -->
+    <div class="main-container">
     <!-- Home Section -->
     <section id="home" class="section active">
         <main class="pt-24 min-h-screen">
@@ -472,15 +868,19 @@
                         <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
                         <span class="text-[10px] uppercase tracking-[0.2em] font-headline font-bold text-on-surface-variant">System Active // Principal Level</span>
                     </div>
-                    <h1 class="text-5xl lg:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-none">
-                        Jasberraja<br/>
-                        <span class="text-tertiary">Principal Frontend Architect</span>
-                    </h1>
+                    <div class="hero-title">
+                        <h1 class="glitch text-5xl lg:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-none animate-fade-in" data-text="JASBERRAJA">
+                            JASBERRAJA
+                        </h1>
+                        <h2 class="terminal-text text-2xl lg:text-3xl font-headline font-semibold text-on-surface-variant mt-4 leading-tight">
+                            &gt; Principal Frontend Architect
+                        </h2>
+                    </div>
                     <div class="max-w-xl">
-                        <p class="text-xl lg:text-2xl font-body text-on-primary-container leading-relaxed mb-8 border-l-2 border-tertiary/30 pl-6 italic">
+                        <p class="text-xl lg:text-2xl font-body text-on-primary-container leading-relaxed mb-8 border-l-2 border-tertiary/30 pl-6 italic animate-fade-in">
                             Experienced Application Engineer with expertise in architecting and delivering scalable, enterprise-grade applications across fintech, security, and SaaS domains. Strong background in full stack development, microservices architecture, and Zero Trust security models.
                         </p>
-                        <div class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
+                        <div class="space-y-4 text-on-surface-variant text-sm leading-relaxed animate-fade-in">
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-tertiary">architecture</span>
                                 <span>DDD, Clean Architecture, CQRS, Event-Driven Design</span>
@@ -499,13 +899,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-4 mt-10">
+                    <div class="flex flex-wrap gap-4 mt-10 animate-fade-in">
                         <button class="bg-tertiary text-on-tertiary px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:brightness-110 transition-all flex items-center gap-3 group" onclick="navigateToSection('expertise')">
                             Explore Expertise
                             <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </button>
                         <button class="bg-surface-container-high text-on-surface px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-all flex items-center gap-3 cursor-pointer" onclick="openCVModal()">
-                            Download CV
+                            Check CV
                             <span class="material-symbols-outlined">download</span>
                         </button>
                     </div>
@@ -931,8 +1331,8 @@
                 </div>
                 <div class="text-right">
                     <button class="bg-tertiary text-on-tertiary-fixed font-headline font-bold px-8 py-4 flex items-center gap-3 hover:bg-tertiary/90 transition-all rounded-lg cursor-pointer" onclick="openTechSpecsModal()">
-                        <span>DOWNLOAD TECH SPECS</span>
-                        <span class="material-symbols-outlined text-sm">terminal</span>
+                        <span>Check Tech Specs</span>
+                        <span class="material-symbols-outlined text-lg">terminal</span>
                     </button>
                 </div>
             </div>
@@ -1171,7 +1571,6 @@
             <div class="cv-header">
                 <div class="cv-title">Jasberraja - Curriculum Vitae</div>
                 <div class="cv-actions">
-                    <button class="cv-btn" onclick="printCV()">Print</button>
                     <button class="cv-close" onclick="closeCVModal()">×</button>
                 </div>
             </div>
@@ -1358,7 +1757,6 @@
             <div class="cv-header">
                 <div class="cv-title">Jasberraja - Technical Specifications</div>
                 <div class="cv-actions">
-                    <button class="cv-btn" onclick="printTechSpecs()">Print</button>
                     <button class="cv-close" onclick="closeTechSpecsModal()">×</button>
                 </div>
             </div>
@@ -1568,6 +1966,8 @@
         </div>
     </div>
 
+    </div>
+
     <!-- Footer -->
     <footer class="w-full py-12 px-8 border-t border-slate-800/30 bg-[#0b1326]">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-full mx-auto">
@@ -1621,10 +2021,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        function printCV() {
-            window.print();
-        }
-        
         // Tech Specs Modal functions
         function openTechSpecsModal() {
             document.getElementById('techspecs-modal').classList.add('active');
@@ -1634,10 +2030,6 @@
         function closeTechSpecsModal() {
             document.getElementById('techspecs-modal').classList.remove('active');
             document.body.style.overflow = 'auto';
-        }
-        
-        function printTechSpecs() {
-            window.print();
         }
         
         // Close modals on Escape key
@@ -1709,8 +2101,29 @@
         // Handle form submission
         document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for your message! This is a demo form - in production, this would send your message.');
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate form
+            if (!name || !email || !message) {
+                alert('Please fill in all fields before sending.');
+                return;
+            }
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Hi sir,\n\nI am ${name}(${email}).\n${message}`);
+            const mailtoLink = `mailto:jasberraja@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email app
+            window.location.href = mailtoLink;
         });
+        
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeAnimations);
     </script>
 </body>
 </html>

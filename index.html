@@ -14,53 +14,53 @@
             theme: {
                 extend: {
                     colors: {
-                        "on-tertiary-fixed": "#001f25",
-                        "surface-container": "#171f33",
-                        "on-secondary-fixed-variant": "#38485d",
-                        "on-tertiary-container": "#008ea1",
-                        "tertiary": "#2fd9f4",
-                        "on-tertiary": "#00363e",
-                        "on-primary": "#283044",
-                        "secondary-fixed-dim": "#b7c8e1",
-                        "surface-container-lowest": "#060e20",
-                        "secondary-fixed": "#d3e4fe",
-                        "outline-variant": "#45464d",
-                        "surface-container-high": "#222a3d",
-                        "inverse-surface": "#dae2fd",
-                        "primary-fixed": "#dae2fd",
-                        "inverse-primary": "#565e74",
-                        "surface": "#0b1326",
-                        "inverse-on-surface": "#283044",
-                        "primary-container": "#0f172a",
-                        "on-surface-variant": "#c6c6cd",
-                        "tertiary-container": "#001b20",
-                        "secondary-container": "#3a4a5f",
-                        "on-secondary-container": "#a9bad3",
-                        "tertiary-fixed": "#a2eeff",
-                        "surface-container-highest": "#2d3449",
-                        "on-error": "#690005",
-                        "primary": "#bec6e0",
-                        "surface-bright": "#31394d",
-                        "background": "#0b1326",
-                        "on-secondary": "#213145",
-                        "surface-dim": "#0b1326",
-                        "tertiary-fixed-dim": "#2fd9f4",
-                        "on-surface": "#dae2fd",
-                        "surface-variant": "#2d3449",
-                        "error-container": "#93000a",
-                        "outline": "#909097",
-                        "on-primary-fixed": "#131b2e",
-                        "surface-tint": "#bec6e0",
-                        "on-primary-container": "#798098",
-                        "on-primary-fixed-variant": "#3f465c",
-                        "on-background": "#dae2fd",
-                        "on-error-container": "#ffdad6",
-                        "surface-container-low": "#131b2e",
-                        "error": "#ffb4ab",
-                        "on-tertiary-fixed-variant": "#004e5a",
-                        "primary-fixed-dim": "#bec6e0",
-                        "secondary": "#b7c8e1",
-                        "on-secondary-fixed": "#0b1c30"
+                        "on-tertiary-fixed": "#000000",
+                        "surface-container": "#1a1a1a",
+                        "on-secondary-fixed-variant": "#404040",
+                        "on-tertiary-container": "#ffffff",
+                        "tertiary": "#800000",
+                        "on-tertiary": "#1a1a1a",
+                        "on-primary": "#333333",
+                        "secondary-fixed-dim": "#ffffff",
+                        "surface-container-lowest": "#000000",
+                        "secondary-fixed": "#ffffff",
+                        "outline-variant": "#666666",
+                        "surface-container-high": "#333333",
+                        "inverse-surface": "#ffffff",
+                        "primary-fixed": "#ffffff",
+                        "inverse-primary": "#404040",
+                        "surface": "#000000",
+                        "inverse-on-surface": "#333333",
+                        "primary-container": "#1a1a1a",
+                        "on-surface-variant": "#e0e0e0",
+                        "tertiary-container": "#000000",
+                        "secondary-container": "#404040",
+                        "on-secondary-container": "#ffffff",
+                        "tertiary-fixed": "#ffffff",
+                        "surface-container-highest": "#666666",
+                        "on-error": "#7f1d1d",
+                        "primary": "#ffffff",
+                        "surface-bright": "#404040",
+                        "background": "#000000",
+                        "on-secondary": "#333333",
+                        "surface-dim": "#000000",
+                        "tertiary-fixed-dim": "#800000",
+                        "on-surface": "#ffffff",
+                        "surface-variant": "#666666",
+                        "error-container": "#991b1b",
+                        "outline": "#999999",
+                        "on-primary-fixed": "#000000",
+                        "surface-tint": "#ffffff",
+                        "on-primary-container": "#666666",
+                        "on-primary-fixed-variant": "#404040",
+                        "on-background": "#ffffff",
+                        "on-error-container": "#fecaca",
+                        "surface-container-low": "#1a1a1a",
+                        "error": "#dc2626",
+                        "on-tertiary-fixed-variant": "#404040",
+                        "primary-fixed-dim": "#ffffff",
+                        "secondary": "#ffffff",
+                        "on-secondary-fixed": "#000000"
                     },
                     fontFamily: {
                         "headline": ["JetBrains Mono", "Fira Code", "Share Tech Mono", "monospace"],
@@ -79,8 +79,8 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         body {
-            background-color: #0b1326;
-            color: #dae2fd;
+            background-color: #000000;
+            color: #ffffff;
             font-family: 'JetBrains Mono', 'Fira Code', 'Share Tech Mono', monospace;
             letter-spacing: 0.02em;
             overflow-x: hidden;
@@ -98,7 +98,7 @@
         /* Digital/Terminal Effects */
         .terminal-text {
             font-family: 'Fira Code', 'Share Tech Mono', 'JetBrains Mono', monospace;
-            text-shadow: 0 0 5px rgba(47, 217, 244, 0.5);
+            text-shadow: 0 0 5px rgba(128, 0, 0, 0.5);
             letter-spacing: 0.05em;
         }
         
@@ -110,7 +110,7 @@
         
         .glitch {
             position: relative;
-            color: #2fd9f4;
+            color: #800000;
             font-family: 'Fira Code', monospace;
         }
         
@@ -166,7 +166,7 @@
             height: 100%;
             background: linear-gradient(
                 transparent 50%,
-                rgba(47, 217, 244, 0.03) 50%
+                rgba(128, 0, 0, 0.03) 50%
             );
             background-size: 100% 4px;
             pointer-events: none;
@@ -187,8 +187,8 @@
                     0deg,
                     transparent,
                     transparent 2px,
-                    rgba(47, 217, 244, 0.1) 2px,
-                    rgba(47, 217, 244, 0.1) 4px
+                    rgba(128, 0, 0, 0.1) 2px,
+                    rgba(128, 0, 0, 0.1) 4px
                 );
             animation: matrix-scroll 20s linear infinite;
         }
@@ -198,22 +198,22 @@
             100% { transform: translateY(100px); }
         }
         .blueprint-grid {
-            background-image: radial-gradient(circle, #2fd9f4 1px, transparent 1px);
+            background-image: radial-gradient(circle, #800000 1px, transparent 1px);
             background-size: 40px 40px;
             opacity: 0.05;
         }
         .expertise-bg {
             background-image: 
-                linear-gradient(rgba(47, 217, 244, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(47, 217, 244, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(128, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(128, 0, 0, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
         
         /* Custom cursor HUD */
         .cursor-display {
             position: fixed;
-            background: rgba(11, 19, 38, 0.85);
-            color: #2fd9f4;
+            background: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
             padding: 6px 14px 6px 10px;
             border-radius: 6px;
             font-family: 'Fira Code', 'JetBrains Mono', monospace;
@@ -221,13 +221,13 @@
             font-weight: 500;
             z-index: 10000;
             pointer-events: none;
-            border: 1px solid rgba(47, 217, 244, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             transform: translate(16px, -50%);
             white-space: nowrap;
             transition: opacity 0.15s ease-out;
-            box-shadow: 0 0 16px rgba(47, 217, 244, 0.12), inset 0 0 12px rgba(47, 217, 244, 0.04);
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.04);
             letter-spacing: 0.08em;
             display: flex;
             align-items: center;
@@ -238,13 +238,13 @@
             opacity: 1;
         }
         .cursor-display .coord-label {
-            color: rgba(47, 217, 244, 0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 0.15em;
         }
         .cursor-display .coord-value {
-            color: #2fd9f4;
+            color: #ffffff;
             font-weight: 600;
             min-width: 32px;
             text-align: right;
@@ -252,7 +252,7 @@
         .cursor-display .coord-divider {
             width: 1px;
             height: 14px;
-            background: rgba(47, 217, 244, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
         /* Crosshair lines */
         .cursor-crosshair-h, .cursor-crosshair-v {
@@ -269,13 +269,13 @@
             height: 1px;
             width: 100vw;
             left: 0;
-            background: linear-gradient(90deg, transparent, rgba(47, 217, 244, 0.06) 20%, rgba(47, 217, 244, 0.06) 80%, transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0.06) 80%, transparent);
         }
         .cursor-crosshair-v {
             width: 1px;
             height: 100vh;
             top: 0;
-            background: linear-gradient(180deg, transparent, rgba(47, 217, 244, 0.06) 20%, rgba(47, 217, 244, 0.06) 80%, transparent);
+            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0.06) 80%, transparent);
         }
         
         /* Hide cursor HUD on touch devices */
@@ -337,10 +337,10 @@
         
         @keyframes glowPulse {
             0%, 100% {
-                box-shadow: 0 0 20px rgba(47, 217, 244, 0.3);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
             }
             50% {
-                box-shadow: 0 0 40px rgba(47, 217, 244, 0.6);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
             }
         }
         
@@ -435,7 +435,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #2fd9f4;
+            background: #800000;
             transition: width 0.3s ease;
         }
         
@@ -476,7 +476,7 @@
         
         .strength-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(47, 217, 244, 0.2);
+            box-shadow: 0 10px 30px rgba(128, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
         
@@ -489,17 +489,23 @@
         
         .expertise-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(47, 217, 244, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            color: #fff;
+            background-color: #800000;
         }
         
         .skill-tag {
             transition: all 0.2s ease;
+            cursor: pointer;
+            color: #000;
+            background-color: #fff;
         }
         
         .skill-tag:hover {
             transform: scale(1.05);
-            background: rgba(47, 217, 244, 0.1);
-            border-color: #2fd9f4;
+            background: rgba(128, 0, 0, 0.1);
+            border-color: #800000;
         }
         
         /* Contact form animations */
@@ -513,7 +519,7 @@
         
         .form-input:focus {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(47, 217, 244, 0.2);
+            box-shadow: 0 5px 20px rgba(128, 0, 0, 0.2);
         }
         
         .submit-button {
@@ -522,7 +528,7 @@
         
         .submit-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(47, 217, 244, 0.4);
+            box-shadow: 0 10px 30px rgba(128, 0, 0, 0.4);
         }
         
         .submit-button:active {
@@ -546,7 +552,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(11, 19, 38, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             backdrop-filter: blur(10px);
         }
@@ -557,26 +563,26 @@
             animation: fadeInUp 0.3s ease-out;
         }
         .terminal-window {
-            background: #0b1326;
-            border: 1px solid #2fd9f4;
+            background: #000000;
+            border: 1px solid #ffffff;
             border-radius: 8px;
             width: 90%;
             max-width: 800px;
             max-height: 80vh;
             overflow: hidden;
-            box-shadow: 0 0 40px rgba(47, 217, 244, 0.3);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
             animation: slideInScale 0.3s ease-out;
         }
         .terminal-header {
-            background: #171f33;
+            background: #1a1a1a;
             padding: 12px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #2fd9f4;
+            border-bottom: 1px solid #ffffff;
         }
         .terminal-title {
-            color: #2fd9f4;
+            color: #ffffff;
             font-family: 'Space Grotesk', monospace;
             font-size: 14px;
             font-weight: 600;
@@ -598,7 +604,7 @@
             padding: 20px;
             font-family: 'Courier New', monospace;
             font-size: 14px;
-            color: #dae2fd;
+            color: #ffffff;
             overflow-y: auto;
             max-height: calc(80vh - 60px);
         }
@@ -609,23 +615,23 @@
             animation: fadeInUp 0.5s ease-out forwards;
         }
         .terminal-prompt {
-            color: #2fd9f4;
+            color: #800000;
         }
         .terminal-command {
-            color: #bec6e0;
+            color: #ffffff;
         }
         .terminal-output {
-            color: #a9bad3;
+            color: #ffffff;
             margin-left: 20px;
         }
         .terminal-section {
-            color: #2fd9f4;
+            color: #800000;
             font-weight: bold;
             margin-top: 16px;
             margin-bottom: 8px;
         }
         .terminal-skill {
-            color: #dae2fd;
+            color: #ffffff;
             margin-left: 20px;
         }
         .terminal-blink {
@@ -640,7 +646,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(11, 19, 38, 0.98);
+            background: rgba(0, 0, 0, 0.98);
             z-index: 9998;
             backdrop-filter: blur(10px);
         }
@@ -651,26 +657,26 @@
             animation: fadeInUp 0.3s ease-out;
         }
         .cv-content {
-            background: #0b1326;
-            border: 1px solid #2fd9f4;
+            background: #000000;
+            border: 1px solid #ffffff;
             border-radius: 12px;
             width: 90%;
             max-width: 900px;
             max-height: 90vh;
             overflow: hidden;
-            box-shadow: 0 0 50px rgba(47, 217, 244, 0.4);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
             animation: slideInScale 0.3s ease-out;
         }
         .cv-header {
-            background: #171f33;
+            background: #1a1a1a;
             padding: 16px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #2fd9f4;
+            border-bottom: 1px solid #ffffff;
         }
         .cv-title {
-            color: #2fd9f4;
+            color: #ffffff;
             font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
             font-weight: 600;
@@ -680,8 +686,8 @@
             gap: 12px;
         }
         .cv-btn {
-            background: #2fd9f4;
-            color: #001f25;
+            background: #800000;
+            color: #ffffff;
             border: none;
             padding: 8px 16px;
             border-radius: 6px;
@@ -692,7 +698,8 @@
             transition: all 0.3s ease;
         }
         .cv-btn:hover {
-            background: #008ea1;
+            background: #ffffff;
+            color: #800000;
             transform: translateY(-1px);
         }
         .cv-close {
@@ -724,23 +731,23 @@
             animation: fadeInUp 0.6s ease-out forwards;
         }
         .cv-section-title {
-            color: #2fd9f4;
+            color: #ffffff;
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
-            border-bottom: 2px solid #2fd9f4;
+            border-bottom: 2px solid #ffffff;
             padding-bottom: 8px;
         }
         .cv-subtitle {
-            color: #bec6e0;
+            color: #ffffff;
             font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 12px;
         }
         .cv-text {
-            color: #dae2fd;
+            color: #ffffff;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
             line-height: 1.6;
@@ -753,45 +760,45 @@
             margin-top: 16px;
         }
         .cv-skill-category {
-            background: #171f33;
+            background: #1a1a1a;
             padding: 16px;
             border-radius: 8px;
-            border-left: 4px solid #2fd9f4;
+            border-left: 4px solid #800000;
         }
         .cv-skill-title {
-            color: #2fd9f4;
+            color: #800000;
             font-weight: 600;
             margin-bottom: 8px;
         }
         .cv-skill-list {
-            color: #dae2fd;
+            color: #ffffff;
             font-size: 14px;
             line-height: 1.4;
         }
         .cv-experience-item {
-            background: #171f33;
+            background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 16px;
-            border-left: 4px solid #2fd9f4;
+            border-left: 4px solid #800000;
         }
         .cv-experience-title {
-            color: #bec6e0;
+            color: #ffffff;
             font-weight: 600;
             margin-bottom: 8px;
         }
         .cv-experience-company {
-            color: #2fd9f4;
+            color: #800000;
             font-size: 14px;
             margin-bottom: 8px;
         }
         .cv-experience-description {
-            color: #dae2fd;
+            color: #ffffff;
             font-size: 14px;
             line-height: 1.5;
         }
         .cv-contact-info {
-            background: #171f33;
+            background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
             display: flex;
@@ -804,7 +811,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #dae2fd;
+            color: #ffffff;
             font-size: 14px;
         }
         
@@ -838,22 +845,22 @@
                 overflow: visible;
             }
             .cv-section-title {
-                color: #001f25;
-                border-bottom-color: #001f25;
+                color: #000000;
+                border-bottom-color: #000000;
             }
             .cv-subtitle {
-                color: #283044;
+                color: #333333;
             }
             .cv-text {
                 color: #000;
             }
             .cv-skill-category, .cv-experience-item, .cv-contact-info {
                 background: #f5f5f5;
-                border-left-color: #001f25;
+                border-left-color: #000000;
                 page-break-inside: avoid;
             }
             .cv-skill-title, .cv-experience-company {
-                color: #001f25;
+                color: #000000;
             }
             .cv-skill-list, .cv-experience-description, .cv-contact-item {
                 color: #333;
@@ -873,7 +880,7 @@
             width: 40px;
             height: 40px;
             background: none;
-            border: 1px solid rgba(47, 217, 244, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             cursor: pointer;
             padding: 0;
@@ -882,14 +889,14 @@
             z-index: 60;
         }
         .mobile-menu-btn:hover {
-            border-color: #2fd9f4;
-            background: rgba(47, 217, 244, 0.05);
+            border-color: #800000;
+            background: rgba(128, 0, 0, 0.05);
         }
         .mobile-menu-btn span {
             display: block;
             width: 20px;
             height: 2px;
-            background: #2fd9f4;
+            background: #ffffff;
             border-radius: 2px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -910,7 +917,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(11, 19, 38, 0.6);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px);
             z-index: 45;
             opacity: 0;
@@ -929,10 +936,10 @@
             width: 280px;
             max-width: 80vw;
             height: 100vh;
-            background: rgba(11, 19, 38, 0.98);
+            background: rgba(0, 0, 0, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(47, 217, 244, 0.15);
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 55;
             padding: 100px 32px 40px;
             transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -949,26 +956,26 @@
             align-items: center;
             gap: 12px;
             padding: 16px 0;
-            color: #c6c6cd;
+            color: #e0e0e0;
             font-family: 'JetBrains Mono', monospace;
             font-size: 15px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             text-decoration: none;
-            border-bottom: 1px solid rgba(69, 70, 77, 0.2);
+            border-bottom: 1px solid rgba(102, 102, 102, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
         }
         .mobile-nav .mobile-nav-link:hover,
         .mobile-nav .mobile-nav-link.active {
-            color: #2fd9f4;
+            color: #800000;
             padding-left: 8px;
-            border-bottom-color: rgba(47, 217, 244, 0.3);
+            border-bottom-color: rgba(128, 0, 0, 0.3);
         }
         .mobile-nav .mobile-nav-link .material-symbols-outlined {
             font-size: 20px;
-            color: #2fd9f4;
+            color: #800000;
             opacity: 0.6;
         }
         .mobile-nav .mobile-nav-link:hover .material-symbols-outlined,
@@ -978,7 +985,7 @@
         .mobile-nav-footer {
             margin-top: auto;
             padding-top: 32px;
-            border-top: 1px solid rgba(47, 217, 244, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             position: absolute;
             bottom: 40px;
             left: 32px;
@@ -995,7 +1002,7 @@
             transition: color 0.3s ease;
         }
         .mobile-nav-footer a:hover {
-            color: #2fd9f4;
+            color: #800000;
         }
         
         /* ===== Responsive Media Queries ===== */
@@ -1090,7 +1097,7 @@
         }
         .parallax-shape {
             position: absolute;
-            border: 1px solid rgba(47, 217, 244, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 2px;
             opacity: 0;
             animation: shapeFloat linear infinite;
@@ -1244,7 +1251,7 @@
             position: absolute;
             inset: -1px;
             border-radius: inherit;
-            background: linear-gradient(135deg, rgba(47, 217, 244, 0.3), transparent 40%, transparent 60%, rgba(47, 217, 244, 0.3));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 40%, transparent 60%, rgba(255, 255, 255, 0.3));
             opacity: 0;
             transition: opacity 0.4s ease;
             z-index: -1;
@@ -1284,10 +1291,10 @@
             stroke-width: 2;
         }
         .scroll-progress .bg-circle {
-            stroke: rgba(47, 217, 244, 0.1);
+            stroke: rgba(255, 255, 255, 0.1);
         }
         .scroll-progress .progress-circle {
-            stroke: #2fd9f4;
+            stroke: #800000;
             stroke-dasharray: 126;
             stroke-dashoffset: 126;
             transition: stroke-dashoffset 0.15s ease;
@@ -1296,7 +1303,7 @@
         
         /* ===== Text Shimmer Effect ===== */
         .text-shimmer {
-            background: linear-gradient(110deg, #dae2fd 35%, #2fd9f4 50%, #dae2fd 65%);
+            background: linear-gradient(110deg, #ffffff 35%, #800000 50%, #ffffff 65%);
             background-size: 200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
@@ -1360,19 +1367,19 @@
     </div>
     
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-xl shadow-2xl shadow-navy-950/50">
+    <nav class="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl shadow-2xl shadow-navy-950/50">
         <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-full mx-auto">
             <div class="nav-brand text-xl font-bold tracking-tighter text-slate-100 uppercase font-headline">
                 Jasberraja <span class="hidden sm:inline">| Principal Frontend Architect</span>
             </div>
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8 font-headline tracking-tight">
-                <a class="nav-link text-cyan-400 border-b-2 border-cyan-400 pb-1 transition-all duration-300 ease-in-out" href="#home" data-section="home">Home</a>
+                <a class="nav-link text-[#800000] border-b-2 border-[#800000] pb-1 transition-all duration-300 ease-in-out" href="#home" data-section="home">Home</a>
                 <a class="nav-link text-slate-400 hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out" href="#expertise" data-section="expertise">Expertise</a>
                 <a class="nav-link text-slate-400 hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out" href="#contact" data-section="contact">Contact</a>
             </div>
             <div class="flex items-center gap-2 md:gap-4">
-                <button class="p-2 text-cyan-400 hover:bg-white/5 rounded-full transition-all duration-300 ease-in-out cursor-pointer" onclick="openTerminal()">
+                <button class="p-2 text-[#800000] hover:bg-white/5 rounded-full transition-all duration-300 ease-in-out cursor-pointer" onclick="openTerminal()">
                     <span class="material-symbols-outlined">terminal</span>
                 </button>
                 <!-- Mobile Hamburger Menu Button -->
@@ -1479,11 +1486,11 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-4 mt-10 reveal reveal-delay-3">
-                        <button class="magnetic-btn bg-tertiary text-on-tertiary px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:brightness-110 transition-all flex items-center gap-3 group" onclick="navigateToSection('expertise')">
+                        <button class="magnetic-btn bg-tertiary text-white px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:brightness-110 transition-all flex items-center gap-3 group" onclick="navigateToSection('expertise')">
                             Explore Expertise
                             <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </button>
-                        <button class="magnetic-btn bg-surface-container-high text-on-surface px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-all flex items-center gap-3 cursor-pointer" onclick="openCVModal()">
+                        <button class="magnetic-btn bg-surface-container-high text-white px-8 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg border border-outline-variant/20 hover:bg-surface-container-highest transition-all flex items-center gap-3 cursor-pointer" onclick="openCVModal()">
                             Check CV
                             <span class="material-symbols-outlined">download</span>
                         </button>
@@ -1909,7 +1916,7 @@
                     </div>
                 </div>
                 <div class="text-right">
-                    <button class="bg-tertiary text-on-tertiary-fixed font-headline font-bold px-8 py-4 flex items-center gap-3 hover:bg-tertiary/90 transition-all rounded-lg cursor-pointer" onclick="openTechSpecsModal()">
+                    <button class="bg-tertiary text-white font-headline font-bold px-8 py-4 flex items-center gap-3 hover:bg-tertiary/90 transition-all rounded-lg cursor-pointer" onclick="openTechSpecsModal()">
                         <span>Check Tech Specs</span>
                         <span class="material-symbols-outlined text-lg">terminal</span>
                     </button>
@@ -1974,7 +1981,7 @@
                         <!-- Submit Button -->
                         <div class="text-center">
                             <button 
-                                class="bg-tertiary text-on-tertiary px-8 py-3 font-headline font-medium rounded-lg hover:bg-tertiary/90 transition-all transform hover:scale-105" 
+                                class="bg-tertiary text-white px-8 py-3 font-headline font-medium rounded-lg hover:bg-tertiary/90 transition-all transform hover:scale-105" 
                                 type="submit"
                             >
                                 Send Message
@@ -2549,17 +2556,17 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w-full py-12 px-8 border-t border-slate-800/30 bg-[#0b1326]">
+    <footer class="w-full py-12 px-8 border-t border-slate-800/30 bg-[#000000]">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-full mx-auto">
             <div class="flex flex-col gap-2">
                 <div class="text-slate-200 font-bold font-headline uppercase tracking-widest text-sm">Jasberraja</div>
                 <p class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500"> &copy; <span id="current-year"></span> Jasberraja. Principal Frontend Architect - Built with Architectural Precision.</p>
             </div>
             <div class="flex gap-8">
-                <a href="https://github.com/Jasberraja" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100">GitHub</a>
-                <a href="https://www.linkedin.com/in/jasberraja-p-26458317b/" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100">LinkedIn</a>
-                <a href="mailto:jasberraja@gmail.com" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100">Email</a>
-                <a href="https://github.com/Jasberraja" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100">Source</a>
+                <a href="https://github.com/Jasberraja" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-[#800000] transition-colors opacity-80 hover:opacity-100">GitHub</a>
+                <a href="https://www.linkedin.com/in/jasberraja-p-26458317b/" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-[#800000] transition-colors opacity-80 hover:opacity-100">LinkedIn</a>
+                <a href="mailto:jasberraja@gmail.com" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-[#800000] transition-colors opacity-80 hover:opacity-100">Email</a>
+                <a href="https://github.com/Jasberraja" target="_blank" rel="noopener noreferrer" class="font-['Space_Grotesk'] text-xs uppercase tracking-[0.05em] text-slate-500 hover:text-[#800000] transition-colors opacity-80 hover:opacity-100">Source</a>
             </div>
         </div>
     </footer>
@@ -2724,14 +2731,14 @@
             
             // Update desktop navigation links
             document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('text-cyan-400', 'border-b-2', 'border-cyan-400', 'pb-1');
+                link.classList.remove('text-[#800000]', 'border-b-2', 'border-[#800000]', 'pb-1');
                 link.classList.add('text-slate-400');
             });
             
             const activeLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
             if (activeLink) {
                 activeLink.classList.remove('text-slate-400');
-                activeLink.classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400', 'pb-1');
+                activeLink.classList.add('text-[#800000]', 'border-b-2', 'border-[#800000]', 'pb-1');
             }
             
             // Update mobile navigation links

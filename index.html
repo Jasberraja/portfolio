@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -203,91 +205,29 @@
             opacity: 0.05;
         }
         .expertise-bg {
-            background-image: 
-                linear-gradient(rgba(128, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(128, 0, 0, 0.03) 1px, transparent 1px);
+            background-image: radial-gradient(circle, #800000 1px, transparent 1px);
             background-size: 40px 40px;
+            opacity: 0.05;
         }
         
-        /* Custom cursor HUD */
-        .cursor-display {
-            position: fixed;
-            background: rgba(0, 0, 0, 0.85);
-            color: #ffffff;
-            padding: 6px 14px 6px 10px;
-            border-radius: 6px;
-            font-family: 'Fira Code', 'JetBrains Mono', monospace;
-            font-size: 11px;
-            font-weight: 500;
-            z-index: 10000;
-            pointer-events: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transform: translate(16px, -50%);
-            white-space: nowrap;
-            transition: opacity 0.15s ease-out;
-            box-shadow: 0 0 16px rgba(255, 255, 255, 0.12), inset 0 0 12px rgba(255, 255, 255, 0.04);
-            letter-spacing: 0.08em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0;
-        }
-        .cursor-display.visible {
-            opacity: 1;
-        }
-        .cursor-display .coord-label {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-        }
-        .cursor-display .coord-value {
-            color: #ffffff;
-            font-weight: 600;
-            min-width: 32px;
-            text-align: right;
-        }
-        .cursor-display .coord-divider {
-            width: 1px;
-            height: 14px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        /* Crosshair lines */
-        .cursor-crosshair-h, .cursor-crosshair-v {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0;
-            transition: opacity 0.15s ease-out;
-        }
-        .cursor-crosshair-h.visible, .cursor-crosshair-v.visible {
-            opacity: 1;
-        }
-        .cursor-crosshair-h {
-            height: 1px;
-            width: 100vw;
-            left: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0.06) 80%, transparent);
-        }
-        .cursor-crosshair-v {
-            width: 1px;
-            height: 100vh;
-            top: 0;
-            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0.06) 80%, transparent);
-        }
-        
-        /* Hide cursor HUD on touch devices */
-        @media (hover: none) and (pointer: coarse) {
-            .cursor-display, .cursor-crosshair-h, .cursor-crosshair-v {
-                display: none !important;
-            }
-        }
-        
-        /* Custom cursor for interactive elements */
-        a, button, input, textarea, .cursor-pointer {
-            cursor: pointer;
+        .matrix-rain {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 0;
+                opacity: 0.1;
+                background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(128, 0, 0, 0.1) 2px,
+                        rgba(128, 0, 0, 0.1) 4px
+                    );
+                animation: matrix-scroll 20s linear infinite;
         }
         
         /* Global Animations */
@@ -300,6 +240,33 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        @keyframes float-medium {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-5deg); }
+        }
+        
+        @keyframes float-fast {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
+        }
+        
+        .animate-float-slow {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+        
+        .animate-float-medium {
+            animation: float-medium 4s ease-in-out infinite;
+        }
+        
+        .animate-float-fast {
+            animation: float-fast 3s ease-in-out infinite;
         }
         
         @keyframes fadeInLeft {
@@ -1353,17 +1320,7 @@
     <div class="scroll-progress" id="scroll-progress">
         <svg viewBox="0 0 44 44">
             <circle class="bg-circle" cx="22" cy="22" r="20"></circle>
-            <circle class="progress-circle" id="progress-circle" cx="22" cy="22" r="20"></circle>
         </svg>
-    </div>
-    
-    <!-- Coordinate Display (Enhanced HUD) -->
-    <div id="cursor-crosshair-h" class="cursor-crosshair-h"></div>
-    <div id="cursor-crosshair-v" class="cursor-crosshair-v"></div>
-    <div id="cursor-display" class="cursor-display">
-        <span class="coord-label">X</span><span class="coord-value" id="coord-x">0</span>
-        <span class="coord-divider"></span>
-        <span class="coord-label">Y</span><span class="coord-value" id="coord-y">0</span>
     </div>
     
     <!-- Navigation -->
@@ -1448,8 +1405,59 @@
                         <div class="border-r border-b border-tertiary/10"></div>
                     </div>
                 </div>
-                <!-- Content Column -->
-                <div class="lg:col-span-7 relative z-10 mouse-parallax" data-parallax-speed="0.02">
+                <!-- Image Column: First on mobile, second on desktop -->
+                <div class="lg:col-span-5 order-first lg:order-first relative group mouse-parallax" data-parallax-speed="0.04">
+                    <!-- Floating Tech Icons Around Image -->
+                    <div class="absolute -top-4 -left-4 animate-float-slow z-20">
+                        <div class="w-12 h-12 bg-blue-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-400/30 shadow-lg">
+                            <i class="fab fa-react text-blue-400 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-8 -right-6 animate-float-medium z-20">
+                        <div class="w-10 h-10 bg-red-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-red-400/30 shadow-lg">
+                            <i class="fab fa-angular text-red-400 text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-2 -left-2 animate-float-fast z-20">
+                        <div class="w-8 h-8 bg-green-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-green-400/30 shadow-lg">
+                            <i class="fab fa-vuejs text-green-400 text-sm"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 -right-8 transform -translate-y-1/2 animate-float-slow z-20">
+                        <div class="w-14 h-14 bg-green-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-green-500/30 shadow-lg">
+                            <i class="fab fa-node-js text-green-500 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-8 -right-4 animate-float-medium z-20">
+                        <div class="w-11 h-11 bg-emerald-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-emerald-400/30 shadow-lg">
+                            <i class="fas fa-leaf text-emerald-400 text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/3 -left-6 transform -translate-y-1/2 animate-float-fast z-20">
+                        <div class="w-9 h-9 bg-pink-500/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-pink-400/30 shadow-lg">
+                            <i class="fab fa-sass text-pink-400 text-base"></i>
+                        </div>
+                    </div>
+                    <div class="absolute top-2/3 -left-8 transform -translate-y-1/2 animate-float-slow z-20">
+                        <div class="w-10 h-10 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-blue-500/30 shadow-lg">
+                            <i class="fab fa-js text-blue-500 text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -inset-4 bg-tertiary/5 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container shadow-2xl rounded-lg">
+                        <img alt="Jasberraja Professional Avatar" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-100" data-alt="Modern professional portrait of a senior engineer with clean architectural lighting, deep blue studio background, high-contrast and sharp focus." src="./jasber1.png"/>
+                        <!-- Architectural Overlay Meta-Data -->
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                            <div class="p-4 bg-surface-container-lowest/90 backdrop-blur-lg border-l-4 border-tertiary">
+                                <p class="text-[10px] font-headline font-bold text-on-surface-variant uppercase tracking-widest mb-1">Current Stack</p>
+                                <p class="text-xs text-on-surface font-mono">NODE.JS // REACT // K8S // AWS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Column: Second on mobile, second on desktop -->
+                <div class="lg:col-span-7 order-last lg:order-last relative z-10 mouse-parallax" data-parallax-speed="0.02">
                     <div class="inline-flex items-center gap-2 mb-6 py-1 px-3 bg-surface-container-high rounded-full border border-outline-variant/15">
                         <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
                         <span class="text-[10px] uppercase tracking-[0.2em] font-headline font-bold text-on-surface-variant">System Active // Principal Level</span>
@@ -1494,20 +1502,6 @@
                             Check CV
                             <span class="material-symbols-outlined">download</span>
                         </button>
-                    </div>
-                </div>
-                <!-- Image Column: Asymmetric Architectural Frame -->
-                <div class="lg:col-span-5 relative group mouse-parallax" data-parallax-speed="0.04">
-                    <div class="absolute -inset-4 bg-tertiary/5 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container shadow-2xl rounded-lg">
-                        <img alt="Jasberraja Professional Avatar" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-100" data-alt="Modern professional portrait of a senior engineer with clean architectural lighting, deep blue studio background, high-contrast and sharp focus." src="./jasber1.png"/>
-                        <!-- Architectural Overlay Meta-Data -->
-                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                            <div class="p-4 bg-surface-container-lowest/90 backdrop-blur-lg border-l-4 border-tertiary">
-                                <p class="text-[10px] font-headline font-bold text-on-surface-variant uppercase tracking-widest mb-1">Current Stack</p>
-                                <p class="text-xs text-on-surface font-mono">NODE.JS // REACT // K8S // AWS</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -2574,45 +2568,6 @@
     <script>
         // Set current year dynamically
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Enhanced cursor coordinate HUD
-        const cursorDisplay = document.getElementById('cursor-display');
-        const coordX = document.getElementById('coord-x');
-        const coordY = document.getElementById('coord-y');
-        const crosshairH = document.getElementById('cursor-crosshair-h');
-        const crosshairV = document.getElementById('cursor-crosshair-v');
-        let cursorTimeout;
-        
-        document.addEventListener('mousemove', function(event) {
-            const x = event.clientX;
-            const y = event.clientY;
-            
-            coordX.textContent = x;
-            coordY.textContent = y;
-            
-            cursorDisplay.style.left = x + 'px';
-            cursorDisplay.style.top = y + 'px';
-            
-            crosshairH.style.top = y + 'px';
-            crosshairV.style.left = x + 'px';
-            
-            cursorDisplay.classList.add('visible');
-            crosshairH.classList.add('visible');
-            crosshairV.classList.add('visible');
-            
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(function() {
-                cursorDisplay.classList.remove('visible');
-                crosshairH.classList.remove('visible');
-                crosshairV.classList.remove('visible');
-            }, 2500);
-        });
-        
-        document.addEventListener('mouseleave', function() {
-            cursorDisplay.classList.remove('visible');
-            crosshairH.classList.remove('visible');
-            crosshairV.classList.remove('visible');
-        });
         
         // Terminal functions
         function openTerminal() {
